@@ -1,0 +1,28 @@
+\begin{circuitikz}
+    \node (Q) at (0,4.5) {$Q$};
+    \node (R) at (1,2.7) {$R$};
+    \node (F) at (10.8,2.5) {$F = \overline{\overline{(\bar{Q}\cdot\bar{R})}\cdot\overline{(Q\cdot R)}}$};
+    \node[nand port] at ($(Q) + (2.5, -0.2)$) (nand1) {};
+    \node[nand port] at ($(Q) + (3.5, -1.8)$) (nand2) {};
+    \node[nand port] at ($(Q) + (5.5, -1.0)$) (nand3) {};
+     \node[nand port] at ($(Q) + (4.5, -3.6)$) (nand4) {};
+     \node[nand port] at ($(Q) + (8.5, -2.0)$) (nand5) {};
+     
+    \draw 
+    (nand1.in 1) |- (nand1.in 2)
+  (nand2.in 1) |- (nand2.in 2)
+  (nand1.out) |- (nand3.in 1)
+  (nand2.out) |- (nand3.in 2)
+  (nand3.out) |- (nand5.in 1)
+  (nand4.out) |- (nand5.in 2)
+  (0.3,4.3)  |- (1.1,4.3) %Q to nand1
+  (1.3,2.7)  |- (2.1,2.7) %R to nand2
+  (1.5,2.7)  |- (nand4.in 1) %R to nand4
+  (0.5,4.3)  |- (nand4.in 2); %Q to nand4
+  \filldraw 
+(1.5,2.7) circle (2pt) node[align=left,   below] {}
+(0.5,4.3) circle (2pt) node[align=left,   below] {}
+(1.1,4.3) circle (2pt) node[align=left,   below] {}
+(2.1,2.7) circle (2pt) node[align=left,   below] {};
+        
+\end{circuitikz}
