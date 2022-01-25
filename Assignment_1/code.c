@@ -9,6 +9,7 @@ int main() {
     unsigned char F_nand; //output
     unsigned int F[8]={1,0,0,1,1,0,0,1}; 
     unsigned char one = 0x01;//used for displaying the output in bit
+    unsigned char  P=0x00,Q=0x00,R=0x00,n; //inputs in hex
     printf("\nBinary Input F_Output NAND Output \n");
     for (n = 0x00; n<0x08; n++)              
     {
